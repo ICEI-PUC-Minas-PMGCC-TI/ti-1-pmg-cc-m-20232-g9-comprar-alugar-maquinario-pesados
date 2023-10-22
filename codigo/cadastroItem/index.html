@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cadastro de itens</h1>
+    <form id="form">
+        <label for="item">Nome do produto</label>
+        <input type="text" id="produto">
+        
+        <label for="tipoProduto"><strong>Selecione o tipo do Produto:</strong></label>
+        <select id="tipoProduto" name="tipoProduto">
+            <option value="">Selecione</option>
+            <option value="Ferramentas">Ferramentas</option>
+            <option value="Maquinas">Maquinas</option>
+            <option value="Projeto">Projeto</option>
+        </select>
+
+        <label for="forma"><strong>Selecione</strong></label>
+        <select id="forma" name="forma">
+            <option value="">Selecione</option>
+            <option value="Venda">Venda</option>
+            <option value="Aluguel">Aluguel</option>
+            <option value="Venda/Aluguel">Venda/Aluguel</option>
+        </select>
+           
+                <label for="estados"><strong>Selecione um estado do Brasil:</strong></label>
+                <select id="estados" name="estados">
+                    <option value="AC">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+                <label for="item">Endereço</label>
+                <input type="text" id="endereço">
+                <label for="descrição">Faça uma descrição do produto</label>
+                <textarea name="descrição" id="descrição"></textarea>
+
+                <div id="formContatos">
+                    <button id="btnIncluirContato" type="submit">Salvar</button>
+                </div>
+    </form>            
+
+    <div id="tela"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
