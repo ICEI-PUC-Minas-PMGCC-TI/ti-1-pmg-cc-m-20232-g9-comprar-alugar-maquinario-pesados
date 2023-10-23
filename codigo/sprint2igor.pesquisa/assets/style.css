@@ -1,0 +1,18 @@
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#product-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.product-item {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}

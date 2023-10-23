@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.filter-container {
+    margin: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    padding: 5px;
+}
+
+.product-list {
+    list-style: none;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-item {
+    margin-bottom: 10px;
+    background-color: red;
+    text-align: center;
+    padding: 2em;
+    max-width: 50%;
+    max-height: 200px;
+}
+.dp-flex{
+    display: flex;
+}
