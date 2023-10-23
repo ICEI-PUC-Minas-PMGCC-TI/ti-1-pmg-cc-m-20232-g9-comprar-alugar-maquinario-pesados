@@ -21,7 +21,6 @@ function salvaDados (dados) {
 
 function incluirContato (){
     // Ler os dados do localStorage
-    console.log("deveser")
     let objDados = leDados();
 
     // Incluir um novo contato
@@ -31,6 +30,7 @@ function incluirContato (){
     let strEstados = document.getElementById ('estados').value;
     let strendereco = document.getElementById ('endereço').value;
     let strDescricao = document.getElementById ('descrição').value;
+    let strImg = document.getElementById ('file-input').value;
     
     let novoProduto = {
         produto: strProduto,
@@ -38,7 +38,8 @@ function incluirContato (){
         forma: strForma,
         estados: strEstados,
         endereço: strendereco,
-        descrição: strDescricao
+        descrição: strDescricao,
+        img: strImg
     };
 
    let valido = validarProduto(novoProduto)
@@ -64,6 +65,22 @@ function validarProduto(novoProduto) {
         alert("Por favor, preencha o campo Selecione o tipo do produto")
         return false
     }
+    if (novoProduto.forma === "") {
+        alert("Por favor, preencha o campo Selecione o tipo do produto")
+        return false
+    }
+    if (novoProduto.estados === "") {
+        alert("Por favor, preencha o campo Selecione o Estado")
+        return false
+    }
+    if (novoProduto.endereço === "") {
+        alert("Por favor, preencha o campo Endereço")
+        return false
+    }
+    if (novoProduto.descrição === "") {
+        alert("Por favor, preencha o campo descrição")
+        return false
+    }
     return true
 }
 
@@ -78,7 +95,7 @@ function imprimeDados () {
     }
 
     for (i=0; i< objDados.contatos.length; i++) {
-        strHtml += `<p>${objDados.contatos[i].produto} - ${objDados.contatos[i].tipoProduto} - ${objDados.contatos[i].forma} - ${objDados.contatos[i].estados} - ${objDados.contatos[i].endereço} - ${objDados.contatos[i].descrição}</p>`
+        strHtml += `<p>${objDados.contatos[i].produto} - ${objDados.contatos[i].tipoProduto} - ${objDados.contatos[i].forma} - ${objDados.contatos[i].estados} - ${objDados.contatos[i].endereço} - ${objDados.contatos[i].descrição} - ${objDados.contatos[i].img}</p>`
     }
 
     tela.innerHTML = strHtml;
@@ -94,10 +111,32 @@ const descricao = document.querySelector("#descrição");
 form.addEventListener("submit" , (event) =>{
     event.preventDefault();
 
-    console.log(nomeProduto)
-
     
     incluirContato()
 }) 
+
+let fileInput = document.getElementById("file-input");
+let imageContainer = document.getElementById("images");
+let numOfFiles = document.getElementById("num-of-files");
+
+function preview(){
+    imageContainer.innerHTML = "";
+    numOfFiles.textContent = `${fileInput.files.length} Files Selected`;
+
+    for(i of fileInput.files){
+        let reader = new FileReader();
+        let figure = document.createElement("figure");
+        let figCap = document.createElement("figcaption");
+        figCap.innerText = i.name;
+        figure.appendChild(figCap);
+        reader.onload=()=>{
+            let img = document.createElement("img");
+            img.setAttribute("src",reader.result);
+            figure.insertBefore(img,figCap);
+        }
+        imageContainer.appendChild(figure);
+        reader.readAsDataURL(i);
+    }
+}
 
 imprimeDados()
