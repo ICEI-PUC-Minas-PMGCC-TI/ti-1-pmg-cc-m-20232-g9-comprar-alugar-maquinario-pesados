@@ -1,0 +1,30 @@
+  #corpo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  #carouselExampleIndicators {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .botoes {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  #detalhes {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 28px;
+  }
+
+  #sobre {
+    grid-column: 1 / 4;
+    grid-row: 4;
+  }
+ 
