@@ -1,4 +1,4 @@
-function filterProducts() {
+/*function filterProducts() {
     const searchInput = document.getElementById('search');
     const productList = document.getElementById('product-list');
     const productItems = productList.getElementsByClassName('product-item');
@@ -14,3 +14,20 @@ function filterProducts() {
         }
     }
 }
+*/
+
+var vetorArmazenado = JSON.parse(localStorage.getItem('db')) || [];
+
+console.log('Vetor Armazenado:', vetorArmazenado);
+
+
+
+
+
+
+
+
+
+
+
+
