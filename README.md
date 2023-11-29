@@ -6,11 +6,8 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 ## Alunos integrantes da equipe
 
  - Raphael Oliveira de Araujo
- - Igor Ribeiro Fagundes de Maria
  - Otávio Zille Almeida Franco
  - Guilherme Henrique da Silva
- - Gustavo Henrique Teixeira Viana
- - Henrique Fernandes Xavier da Silva
 
 ## Professores responsáveis
 
