@@ -1,0 +1,27 @@
+
+
+.NomeProduto{
+    font-size: larger;
+    background-color: orange;
+    border-radius: 0.5rem;
+}
+
+.imgProduto{
+    margin: 10px;
+}
+
+.row{
+    margin: 10px;
+}
+
+.col{
+    border-radius: 3%;
+    background-color: lightgray;
+    margin: 10px;
+}
+.search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+    
