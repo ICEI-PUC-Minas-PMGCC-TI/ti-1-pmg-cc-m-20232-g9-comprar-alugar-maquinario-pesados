@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de Compras</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+    #cart {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .remove-btn {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .checkout-btn {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Carrinho de Compras</h1>
+  </header>
+
+  <div id="cart">
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+    </table>
+    <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+  </div>
+
+  <script>
+    function addToCart(productName, price) {
+      // Recupera itens do carrinho da localStorage ou inicializa um array vazio
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      // Adiciona o novo item ao carrinho
+      cartItems.push({ productName, price });
+
+      // Atualiza a localStorage com o novo carrinho
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      // Atualiza a exibição do carrinho
+      displayCartItems();
+    }
+
+    function removeItem(index) {
+      // Recupera itens do carrinho da localStorage
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      // Remove o item do carrinho
+      cartItems.splice(index, 1);
+
+      // Atualiza a localStorage com o novo carrinho
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      // Atualiza a exibição do carrinho
+      displayCartItems();
+    }
+
+    function displayCartItems() {
+      // Recupera itens do carrinho da localStorage
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      // Obtém a referência da tabela no HTML
+      let tableBody = document.getElementById('cart-items');
+
+      // Limpa o conteúdo atual da tabela
+      tableBody.innerHTML = '';
+
+      // Popula a tabela com os itens do carrinho
+      cartItems.forEach((item, index) => {
+        let row = tableBody.insertRow();
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+
+        cell1.innerHTML = item.productName;
+        cell2.innerHTML = '$' + item.price;
+        cell3.innerHTML = '<button class="remove-btn" onclick="removeItem(' + index + ')">Remover</button>';
+      });
+    }
+
+    function checkout() {
+      // Implemente a lógica de finalização de compra aqui
+      alert('Compra finalizada! Obrigado por comprar conosco.');
+      
+      // Limpa o carrinho após a compra
+      localStorage.removeItem('cartItems');
+      
+      // Atualiza a exibição do carrinho
+      displayCartItems();
+    }
+
+    // Exibe os itens do carrinho ao carregar a página
+    displayCartItems();
+  </script>
+
+</body>
+</html>
