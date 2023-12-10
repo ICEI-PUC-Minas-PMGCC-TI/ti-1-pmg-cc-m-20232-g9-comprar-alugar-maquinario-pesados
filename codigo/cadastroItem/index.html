@@ -67,14 +67,8 @@
         <label for="descrição">Faça uma descrição do seu produto:</label>
         <textarea name="descrição" id="descrição"></textarea>
 
-        <div class="container">
-            <input type="file" id="file-input" accept="image/png, image/jpeg" onchange="preview()" multiple>
-            <label for="file-input">
-                <i class="fas fa-upload">Escolha uma foto</i> &nbsp;
-            </label>
-            <p id="num-of-files">Nenhum arquivo escolhido</p>
-            <div id="images"></div>
-        </div>
+        <label for="url">Coloque a URL de uma imagem para seu produto:</label>
+        <textarea name="url" id="url"></textarea>
 
         <div id="formContatos">
             <button id="btnIncluirContato" type="submit">Salvar</button>
@@ -82,9 +76,7 @@
 
     </form>
 
-    <div id="tela"></div>
-
-    <script src="app.js"></script>
+    <script src="api.js"></script>
 </body>
 
 </html>
