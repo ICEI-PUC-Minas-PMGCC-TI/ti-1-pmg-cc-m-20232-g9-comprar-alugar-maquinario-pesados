@@ -2,115 +2,214 @@
 <html lang="en">
 
 <head>
+  <meta name="Author" content="Raphael Oliveira de Araujo">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/style.css">
+  <title>Pesquisa de Produtos</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>Pesquisa de Produtos</title>
-</head>
-
-<body>
-  <header>
-    <p class="bg-primary p-2 fs-4 fst-italic fw-bold text-light">HEADER Placeholder</p>
-  </header>
-  <main>
-    <div class="search-container">
-      <label for="search">Pesquisar Produtos:</label>
-      <input type="text" id="search" oninput="filterProducts()">
-    </div>
-
-    <div id="Produtos" class="container .container-sm text-center">
-      <div class="row">
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-        <div class="col">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Nome do Produto</h1>
-        </div>
-      </div>
-    </div>
-
-    <script src="./pesquisa.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
+  
+</head>
+
+<body>
+  <header class="navega">
+    <nav class="nav-bar">
+        <div class="logo">
+            <a href="/"><img src="./assets/img/Black Modern Welding Logo.png" id="logo" alt=""></a>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li class="nav-item"><a href="../Pagina Principal/index.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+                <li class="nav-item"><a href="#footer_content" class="nav-link"> Sobre</a></li>
+            </ul>
+        </div>
+        <div class="login-button">
+            <button><a href="#">Entrar</a></button>
+        </div>
+
+        <div class="mobile-menu-icon">
+            <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li class="nav-item"><a href="C:\Faculdade\TIAL\Pagina-dos-Item\codigo\Pagina Principal\index.html" class="nav-link">Início</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+        </ul>
+
+        <div class="login-button">
+            <button><a href="#">Entrar</a></button>
+        </div>
+    </div>
+</header>
+  <main>
+    <div class="search-container">
+      <input id="searchbar" type="text" name="searchbar" placeholder="Pesquise Seu Produto" onkeyup="search()">
+    </div>
+
+    <div id="Produtos" class="container-md text-center">
+      <div class="row">
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="assets/img/Trator.png" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Trator</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Britadeira</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Escavadeira</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Guindaste Móvel</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Pá carregadeira</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Trator de Esteira</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Caminhão Basculante</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Restroescavadeira</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Motoniveladora</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Trator Agricola</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">Dumper Articulado</h1>
+        </div>
+        <div class="col NomeProduto">
+          <div>
+            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
+          </div>
+          <h1 class="NomeProduto">bulldozer</h1>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
-    <p class="bg-primary p-2 fs-4 fst-italic fw-bold text-light">FOOTER Placeholder</p>
-  </footer>
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <h1>IronWorks</h1>
+            <p>Entre em contato pelas redes sociais</p>
+
+            <div id="footer_social_media">
+                <a href="#" class="footer-link" id="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        
+        <ul class="footer-list">
+            <li>
+                <h3>Sobre Nós</h3>
+            </li>
+            <li>
+                Esse é um trabalho da materia TIAW 
+            </li>
+            <li>
+                Feito na PUC MINAS (Semestre 2023/2)
+            </li>
+        </ul>
+
+        <ul class="footer-list">
+            <li>
+                <h3>Paginas</h3>
+            </li>
+            <li>
+                <a href="../Pagina Principal/index.html" class="footer-link">Tela principal</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Login</a>
+            </li>
+            <li>
+              <a href="../carrinho de compras/index.html" class="footer-link">Carrinho</a>
+            </li>
+        </ul>
+
+        <div id="footer_subscribe">
+            <h3>Suporte</h3>
+
+            <p>
+                mande uma mensagem para nosso suporte abaixo
+            </p>
+
+            <div id="input_group">
+                <input type="email" id="email">
+                <button>
+                    <i class="fa-regular fa-envelope"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer_copyright">
+        &#169
+        2023 Todos os direitos reservados
+    </div>
+</footer>
+  <script src="assets/pesquisa.js"></script>
+  <script src="assets/script.js"></script>
 </body>
 
 </html>
