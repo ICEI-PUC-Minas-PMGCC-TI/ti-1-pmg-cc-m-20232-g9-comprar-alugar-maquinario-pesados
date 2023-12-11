@@ -27,6 +27,10 @@ function validarProduto(novoProduto) {
         alert("Por favor, preencha o campo URL");
         return false;
     }
+    if (novoProduto.preco === "") {
+        alert("Por favor, preencha o campo Preco");
+        return false;
+    }    
     return true;
 }
 
@@ -40,6 +44,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
     var estado = document.getElementById("estados").value;
     var endereco = document.getElementById("endereço").value;
     var descricao = document.getElementById("descrição").value;
+    var preco = document.getElementById("preco").value;
     var url = document.getElementById("url").value;
 
     var novoProduto = {
@@ -49,6 +54,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
         "estado": estado,
         "endereco": endereco,
         "descricao": descricao,
+        "preco": preco,
         "url": url
     };
     // Validar os dados antes de enviar
