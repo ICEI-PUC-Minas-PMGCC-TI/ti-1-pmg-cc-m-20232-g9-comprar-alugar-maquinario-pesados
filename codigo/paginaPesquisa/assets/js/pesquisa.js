@@ -10,12 +10,11 @@ function search(){
         if (!nomeProduto.toLowerCase().includes(input)){
     
             divCard.style.display = "none"
-        }else{
+        }else if(nomeProduto != "Guernica"){
             divCard.style.display = "block"
         }
     }
 }
-
 
 
 
