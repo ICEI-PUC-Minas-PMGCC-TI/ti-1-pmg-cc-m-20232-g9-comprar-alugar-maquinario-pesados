@@ -38,3 +38,8 @@ function fillestado(estado) {
     var item = document.getElementById('album-estado-0');
     item.textContent = estado;
 }
+
+function fillpreco(preco) {
+    var item = document.getElementById('preco');
+    item.textContent = preco;
+}
