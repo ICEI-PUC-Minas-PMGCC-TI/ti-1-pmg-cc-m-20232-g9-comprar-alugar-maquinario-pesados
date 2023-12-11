@@ -1,301 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrinho de Compras</title>
-  <style>
- *{
-    font-family: 'inter', sans-serif;
-    margin: 0;
-    box-sizing: border-box;
-    letter-spacing: 1px;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    padding: 0;
-}
- 
- @import url('https://fonts.googleapis.com/css2? family= Inter:wght@100;200;300;400;500;600 & family= Roboto:wght@100 & display=swap' );
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <style>
+        * {
+            font-family: 'inter', sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            padding: 0;
+        }
 
-:root{
-    --color-neuttral-0: #0e0c0c;
-    --color-neuttral-10: #171717;
-    --color-neuttral-30: #a8a29e;
-    --color-neuttral-40: #f5f5f5;
-}
-    header {
-    background-color: #333;
-    box-shadow: 0px 3px 10px var(--color-neuttral-40);
-}
+        @import url('https://fonts.googleapis.com/css2? family= Inter:wght@100;200;300;400;500;600 & family= Roboto:wght@100 & display=swap');
 
-#logo{
-    width: auto; 
-    height: 5rem;
-}
+        :root {
+            --color-neuttral-0: #0e0c0c;
+            --color-neuttral-10: #171717;
+            --color-neuttral-30: #a8a29e;
+            --color-neuttral-40: #f5f5f5;
+        }
 
-.nav-bar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 6rem;
-}
+        header {
+            background-color: #333;
+            box-shadow: 0px 3px 10px var(--color-neuttral-40);
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    border-radius: 0.375rem;
-}
+        #logo {
+            width: auto;
+            height: 5rem;
+        }
 
-.logo h1 {
-    color: var(--color-neuttral-40);
-}
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 6rem;
+        }
 
-.nav-list {
-    display: flex;
-    align-items: center;
-    font-size: 1.8rem;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            border-radius: 0.375rem;
+        }
 
-.nav-list ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    color: var(--color-neuttral-40);
-}
+        .logo h1 {
+            color: var(--color-neuttral-40);
+        }
 
-.nav-item {
-    margin: 0 15px;
-}
+        .nav-list {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+        }
 
-.nav-link {
-    text-decoration: none;
-    font-size: 1.15rem;
-    color: var(--color-neuttral-40);
-    font-weight: 400;
-}
+        .nav-list ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            color: var(--color-neuttral-40);
+        }
 
-.login-button button {
-    border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    background-color: #0187a7;
-    
-}
+        .nav-item {
+            margin: 0 15px;
+        }
 
-.login-button button a {
-    text-decoration: none;
-    color: var(--color-neuttral-40);
-    font-weight: 500;
-    font-size: 1.1rem;
-}
+        .nav-link {
+            text-decoration: none;
+            font-size: 1.15rem;
+            color: var(--color-neuttral-40);
+            font-weight: 400;
+        }
 
-.mobile-menu-icon {
-    display: none;
-}
+        .login-button button {
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            background-color: #0187a7;
 
-.mobile-menu {
-    display: none;
-    color: var(--color-neuttral-40);
-}
+        }
 
-@media screen and (max-width: 730px) {
-    .nav-bar {
-        padding: 1.5rem 4rem;
-    }
-    .nav-item {
-        display: none;
-    }
-    .login-button {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-    .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-    .mobile-menu .nav-item {
-        display: block;
-        padding-top: 1.2rem;
-    }
-    .mobile-menu .login-button {
-        display: block;
-        padding: 1rem 2rem;
-    }
-    .mobile-menu .login-button button {
-        width: 100%;
-    }
-    .open {
-        display: block;
-    }
-}
-body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    #cart {
-      width: 80%;
-      margin: 20px auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    .remove-btn {
-      background-color: #dc3545;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .checkout-btn {
-      background-color: #28a745;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 4px;
-      float: right;
-    }
-  </style>
+        .login-button button a {
+            text-decoration: none;
+            color: var(--color-neuttral-40);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-icon {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--color-neuttral-40);
+        }
+
+        @media screen and (max-width: 730px) {
+            .nav-bar {
+                padding: 1.5rem 4rem;
+            }
+
+            .nav-item {
+                display: none;
+            }
+
+            .login-button {
+                display: none;
+            }
+
+            .mobile-menu-icon {
+                display: block;
+            }
+
+            .mobile-menu-icon button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+
+            .mobile-menu ul {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding-bottom: 1rem;
+            }
+
+            .mobile-menu .nav-item {
+                display: block;
+                padding-top: 1.2rem;
+            }
+
+            .mobile-menu .login-button {
+                display: block;
+                padding: 1rem 2rem;
+            }
+
+            .mobile-menu .login-button button {
+                width: 100%;
+            }
+
+            .open {
+                display: block;
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #cart {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .remove-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .checkout-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            float: right;
+        }
+
+        footer {
+            width: 100%;
+            color: var(--color-neuttral-40);
+        }
+
+        .footer-link {
+            text-decoration: none;
+        }
+
+        #footer_content {
+            background-color: var(--color-neuttral-10);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 3rem 3.5rem;
+        }
+
+        #footer_contacts h1 {
+            margin-bottom: 0.75rem;
+        }
+
+        #footer_social_media {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        #footer_social_media .footer-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            width: 2.5rem;
+            color: var(--color-neuttral-40);
+            border-radius: 50%;
+            transition: all 0.4s;
+        }
+
+        #footer_social_media .footer-link i {
+            font-size: 1.25rem;
+        }
+
+        #footer_social_media .footer-link:hover {
+            opacity: 0.8;
+        }
+
+        #instagram {
+            background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+        }
+
+        #facebook {
+            background-color: #4267b3;
+        }
+
+        #whatsapp {
+            background-color: #25d366;
+        }
+
+        .footer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            list-style: none;
+        }
+
+        .footer-list .footer-link {
+            color: var(--color-neuttral-30);
+            transition: all 0.4s;
+        }
+
+        .footer-list .footer-link:hover {
+            color: #7f37c9;
+        }
+
+        #footer_subscribe {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #footer_subscribe p {
+            color: var(--color-neuttral-30);
+        }
+
+        #input_group {
+            display: flex;
+            align-items: center;
+            background-color: var(--color-neuttral-0);
+            border-radius: 4px;
+        }
+
+        #input_group input {
+            all: unset;
+            padding: 0.75rem;
+            width: 100%;
+        }
+
+        #input_group button {
+            background-color: #7f37c9;
+            border: none;
+            color: var(--color-neuttral-40);
+            padding: 0px 1.25rem;
+            font-size: 1.125rem;
+            height: 100%;
+            border-radius: 0px 4px 4px 0px;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        #input_group button:hover {
+            opacity: 0.8;
+        }
+
+        #footer_copyright {
+            display: flex;
+            justify-content: center;
+            background-color: var(--color-neuttral-0);
+            font-size: 0.9rem;
+            padding: 1.5rem;
+            font-weight: 100;
+        }
+
+        @media screen and (max-width: 768px) {
+            #footer_content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 426px) {
+            #footer_content {
+                grid-template-columns: repeat(1, 1fr);
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header class="navega">
-    <nav class="nav-bar">
-        <div class="logo">
-            <a href="/"><img src="Black Modern Welding Logo.png" id="logo" alt=""></a>
-        </div>
-        <div class="nav-list">
+    <header class="navega">
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="/"><img src="Black Modern Welding Logo.png" id="logo" alt=""></a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="../Pagina Principal/index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="../paginaPesquisa/index.html" class="nav-link">Produtos</a></li>
+                    <li class="nav-item"><a href="#footer_content" class="nav-link"> Sobre</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="#">Entrar</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
             <ul>
                 <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"> Sobre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
             </ul>
-        </div>
-        <div class="login-button">
-            <button><a href="#">Entrar</a></button>
-        </div>
 
-        <div class="mobile-menu-icon">
-            <button onclick="menuShow()"><img class="icon" src="menu_white_36dp.svg" alt=""></button>
+            <div class="login-button">
+                <button><a href="#">Entrar</a></button>
+            </div>
         </div>
-    </nav>
-    <div class="mobile-menu">
-        <ul>
-            <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-        </ul>
+    </header>
 
-        <div class="login-button">
-            <button><a href="#">Entrar</a></button>
-        </div>
+    <div id="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
     </div>
-</header>
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1>IronWorks</h1>
+                <p>Entre em contato pelas rede sociais</p>
 
-  <div id="cart">
-    <table>
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Preço</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody id="cart-items"></tbody>
-    </table>
-    <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
-  </div>
+                <div id="footer_social_media">
+                    <a href="#" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
 
-  <script>
-    function addToCart(productName, price) {
-      // Recupera itens do carrinho da localStorage ou inicializa um array vazio
-      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                    <a href="#" class="footer-link" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
 
-      // Adiciona o novo item ao carrinho
-      cartItems.push({ productName, price });
+                    <a href="#" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
 
-      // Atualiza a localStorage com o novo carrinho
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            <ul class="footer-list">
+                <li>
+                    <h3>Sobre Nós</h3>
+                </li>
+                <li>
+                    Esse é um trabalho da materia TIAW
+                </li>
+                <li>
+                    Feito na PUC MINAS (Semestre 2023/2)
+                </li>
+            </ul>
 
-      // Atualiza a exibição do carrinho
-      displayCartItems();
-    }
+            <ul class="footer-list">
+                <li>
+                    <h3>Paginas</h3>
+                </li>
+                <li>
+                    <a href="../Pagina Principal/index.html" class="footer-link">Tela principal</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Login</a>
+                </li>
+                <li>
+                    <a href="../carrinho de compras/index.html" class="footer-link">Carrinho</a>
+                </li>
+            </ul>
 
-    function removeItem(index) {
-      // Recupera itens do carrinho da localStorage
-      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            <div id="footer_subscribe">
+                <h3>Suporte</h3>
 
-      // Remove o item do carrinho
-      cartItems.splice(index, 1);
+                <p>
+                    mande uma mensagem para nosso suporte abaixo
+                </p>
 
-      // Atualiza a localStorage com o novo carrinho
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                <div id="input_group">
+                    <input type="email" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-      // Atualiza a exibição do carrinho
-      displayCartItems();
-    }
+        <div id="footer_copyright">
+            &#169
+            2023 Todos os direitos reservados
+        </div>
+    </footer>
+    <script>
+        function addToCart(productName, price) {
+            // Recupera itens do carrinho da localStorage ou inicializa um array vazio
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-    function displayCartItems() {
-      // Recupera itens do carrinho da localStorage
-      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            // Adiciona o novo item ao carrinho
+            cartItems.push({ productName, price });
 
-      // Obtém a referência da tabela no HTML
-      let tableBody = document.getElementById('cart-items');
+            // Atualiza a localStorage com o novo carrinho
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-      // Limpa o conteúdo atual da tabela
-      tableBody.innerHTML = '';
+            // Atualiza a exibição do carrinho
+            displayCartItems();
+        }
 
-      // Popula a tabela com os itens do carrinho
-      cartItems.forEach((item, index) => {
-        let row = tableBody.insertRow();
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
+        function removeItem(index) {
+            // Recupera itens do carrinho da localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-        cell1.innerHTML = item.productName;
-        cell2.innerHTML = '$' + item.price;
-        cell3.innerHTML = '<button class="remove-btn" onclick="removeItem(' + index + ')">Remover</button>';
-      });
-    }
+            // Remove o item do carrinho
+            cartItems.splice(index, 1);
 
-    function checkout() {
-      // Implemente a lógica de finalização de compra aqui
-      alert('Compra finalizada! Obrigado por comprar conosco.');
-      
-      // Limpa o carrinho após a compra
-      localStorage.removeItem('cartItems');
-      
-      // Atualiza a exibição do carrinho
-      displayCartItems();
-    }
+            // Atualiza a localStorage com o novo carrinho
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    // Exibe os itens do carrinho ao carregar a página
-    displayCartItems();
-  </script>
+            // Atualiza a exibição do carrinho
+            displayCartItems();
+        }
+
+        function displayCartItems() {
+            // Recupera itens do carrinho da localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Obtém a referência da tabela no HTML
+            let tableBody = document.getElementById('cart-items');
+
+            // Limpa o conteúdo atual da tabela
+            tableBody.innerHTML = '';
+
+            // Popula a tabela com os itens do carrinho
+            cartItems.forEach((item, index) => {
+                let row = tableBody.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+
+                cell1.innerHTML = item.productName;
+                cell2.innerHTML = '$' + item.price;
+                cell3.innerHTML = '<button class="remove-btn" onclick="removeItem(' + index + ')">Remover</button>';
+            });
+        }
+
+        function checkout() {
+            // Implemente a lógica de finalização de compra aqui
+            alert('Compra finalizada! Obrigado por comprar conosco.');
+
+            // Limpa o carrinho após a compra
+            localStorage.removeItem('cartItems');
+
+            // Atualiza a exibição do carrinho
+            displayCartItems();
+        }
+
+        // Exibe os itens do carrinho ao carregar a página
+        displayCartItems();
+    </script>
 
 </body>
+
 </html>
