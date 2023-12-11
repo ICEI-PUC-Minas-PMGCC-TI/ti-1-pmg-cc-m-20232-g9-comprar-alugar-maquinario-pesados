@@ -26,6 +26,18 @@ header {
   box-shadow: 0px 3px 10px var(--color-neuttral-40);
 }
 
+#tam{
+
+  font-size: large;
+
+}
+
+.tam{
+
+  font-size: x-large;
+
+}
+
 #logo{
   width: auto; 
   height: 5rem;

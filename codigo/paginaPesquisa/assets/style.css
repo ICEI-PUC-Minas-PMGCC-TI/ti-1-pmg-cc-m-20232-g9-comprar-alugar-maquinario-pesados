@@ -144,6 +144,12 @@ body {
     background-color: #333!important;
 }
 
+#id-nome-produto{
+
+    text-align: center;
+
+}
+
 #searchbar{
     width: 1500px;
     height: 50px;
@@ -184,6 +190,7 @@ footer {
     width: 100%;
     color: var(--color-neuttral-40);
     box-sizing: border-box;
+    padding-top: 20px;
 }
 
 .footer-link {
