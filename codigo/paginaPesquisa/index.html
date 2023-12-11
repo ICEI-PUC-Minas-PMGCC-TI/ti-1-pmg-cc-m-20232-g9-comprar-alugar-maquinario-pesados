@@ -56,87 +56,24 @@
       <input id="searchbar" type="text" name="searchbar" placeholder="Pesquise Seu Produto" onkeyup="search()">
     </div>
 
-    <div id="Produtos" class="container-md text-center">
-      <div class="row">
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="assets/img/Trator.png" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Trator</h1>
+    <div id="Produtos" class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="linha-produtos">
+        <div class="col cards-produto" id="card-produto" style="display: none;">
+            <div id="card-style" class="card shadow-sm dark-card">
+                <img src="#"
+                    class="bd-placeholder-img card-img-top img-produto" width="100%" height="225" alt=""
+                    style="object-fit: contain;">
+                <div class="card-body">
+                    <p id="id-nome-produto" class="nome-produto">Guernica</p>
+                    <div class="d-flex justify-content-center align-items-center" style="gap: 15px;">
+                        <a href="./assets/albuns/album1.html" class="id-produto">
+                            <button type="button" class="btn btn-primary">Detalhes</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Britadeira</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Escavadeira</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Guindaste Móvel</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Pá carregadeira</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Trator de Esteira</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Caminhão Basculante</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Restroescavadeira</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Motoniveladora</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Trator Agricola</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">Dumper Articulado</h1>
-        </div>
-        <div class="col NomeProduto">
-          <div>
-            <img class="imgProduto" src="https://picsum.photos/230" alt="Imagem de Espaço Reservado">
-          </div>
-          <h1 class="NomeProduto">bulldozer</h1>
-        </div>
-      </div>
+    </div>
     </div>
   </main>
   <footer>
@@ -209,7 +146,16 @@
     </div>
 </footer>
   <script src="assets/pesquisa.js"></script>
-  <script src="assets/script.js"></script>
+  <script src="assets/js/pesquisa.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    getItem()
+            .then((itens) => {
+              console.log(itens)
+                renderCards(itens)
+            });
+  </script>
 </body>
 
 </html>

@@ -54,7 +54,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
     // Validar os dados antes de enviar
     if (validarProduto(novoProduto)) {
         // Se a validação for bem-sucedida, continuar com a requisição POST
-        fetch("https://jsonservercadas.gilhermetheodor.repl.co/contatos", {
+        fetch("https://jsonservercadas.gilhermetheodor.repl.co/itens", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -62,19 +62,6 @@ document.getElementById("form").addEventListener("submit", function (event) {
             body: JSON.stringify(novoProduto)
         })
         .then(response => response.json())
-        .then(data => {
-            console.log("Resposta do servidor:", data);
-        
-            if (data.id !== undefined) {
-                novoProduto.linkAlbum = `./assets/albuns/album.html?id=${data.id}`;
-                console.log("Link do álbum:", novoProduto.linkAlbum);
-        
-                // Redirecionar para o link do álbum após o envio bem-sucedido
-                window.location.href = novoProduto.linkAlbum;
-            } else {
-                console.error("O campo 'id' não está presente na resposta do servidor.");
-            }
-        })
         .catch(error => {
             console.error("Erro ao enviar dados para o servidor:", error);
         });

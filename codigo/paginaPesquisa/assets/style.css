@@ -129,6 +129,18 @@ header {
     }
 }
 
+main {
+    flex-grow: 1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #333!important;
+}
+
 #searchbar{
     width: 1500px;
     height: 50px;
@@ -136,6 +148,11 @@ header {
     padding-left: 30px;
     background-color: #f8f8f8;
     
+}
+
+#card-style{
+    background-color: var(--color-neuttral-10);
+    color: var(--color-neuttral-40);
 }
 
 #nomeProduto{
@@ -156,15 +173,6 @@ header {
     margin: 10px;
 }
 
-.row{
-    margin: 10px;
-}
-
-.col{
-    border-radius: 3%;
-    background-color: lightgray;
-    margin: 10px;
-}
 .search-container {
     text-align: center;
     margin: 20px;
@@ -172,6 +180,7 @@ header {
 footer {
     width: 100%;
     color: var(--color-neuttral-40);
+    box-sizing: border-box;
 }
 
 .footer-link {
