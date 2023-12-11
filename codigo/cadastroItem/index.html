@@ -10,16 +10,14 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-=======
     <header class="navega">
         <nav class="nav-bar">
             <div class="logo">
-                <a href="/"><img src="Black Modern Welding Logo.png" id="logo" alt=""></a>
+                <a href="/"><img src="./assets/img/Black Modern Welding Logo.png" id="logo" alt=""></a>
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="../Pagina Principal/index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
                     <li class="nav-item"><a href="../paginaPesquisa/index.html" class="nav-link">Produtos</a></li>
                     <li class="nav-item"><a href="#footer_content" class="nav-link"> Sobre</a></li>
                 </ul>
@@ -29,14 +27,14 @@
             </div>
 
             <div class="mobile-menu-icon">
-                <button onclick="menuShow()"><img class="icon" src="menu_white_36dp.svg" alt=""></button>
+                <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
             </div>
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="../paginaPesquisa/index.html" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#footer_content" class="nav-link">Sobre</a></li>
             </ul>
 
             <div class="login-button">
@@ -44,7 +42,6 @@
             </div>
         </div>
     </header>
->>>>>>> efe7ea9d98367c84960d9c322b6e7271ca2a371e
     <h1>Cadastro de itens</h1>
     <form id="form">
         <label for="item">Nome do produto:</label>
@@ -107,11 +104,10 @@
         <textarea name="url" id="url"></textarea>
 
         <div id="formContatos">
-            <button id="btnIncluirContato" type="submit">Salvar</button>
+            <button id="btnIncluirContato" type="submit"><a href="../Pagina Principal/index.html">Salvar</a></button>
         </div>
 
     </form>
-    <script src="api.js"></script>
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
@@ -153,7 +149,7 @@
                     <a href="../Pagina Principal/index.html" class="footer-link">Tela principal</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link">Login</a>
+                    <a href="../crud/index.html" class="footer-link">Login</a>
                 </li>
                 <li>
                     <a href="../carrinho de compras/index.html" class="footer-link">Carrinho</a>
@@ -181,6 +177,7 @@
             2023 Todos os direitos reservados
         </div>
     </footer>
+    <script src="api.js"></script>
 </body>
 
 </html>
