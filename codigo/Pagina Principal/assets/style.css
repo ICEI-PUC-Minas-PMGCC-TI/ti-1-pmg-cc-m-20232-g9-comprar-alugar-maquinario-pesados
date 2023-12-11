@@ -18,7 +18,7 @@
 }
 
 body{
-    background-color: var(--color-neuttral-30);
+    background-color: var(--color-neuttral-30)!important;
 }
 header {
     background-color: #333;
@@ -132,6 +132,11 @@ header {
     .open {
         display: block;
     }
+}
+
+#stylecard{
+    background-color: var(--color-neuttral-10);
+    color: var(--color-neuttral-40);
 }
 
 .carousel-inner > .carousel-item > img {

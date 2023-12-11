@@ -18,7 +18,7 @@
 }
 
 body{
-    background-color: var(--color-neuttral-30);
+    background-color: var(--color-neuttral-30)!important;
 }
 header {
     background-color: #333;
